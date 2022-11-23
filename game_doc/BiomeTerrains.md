@@ -7,3 +7,6 @@
 | specialTerrains | BiomeTerrain[] | 允许出现的特殊地形。 |
 | transition | string | 过渡方式（生成器参数） |
 | transitionTag | int | 过渡附加值（生成器参数） |
+## 参考
+
+* [BiomeTerrain](BiomeTerrain.md)

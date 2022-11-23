@@ -15,4 +15,8 @@
   * [BlockEntity](game_doc/BlockEntity.md)
   * [DataWatcher](game_doc/DataWatcher.md)
   * [Entity](game_doc/Entity.md)
+  * [Inventory](game_doc/Inventory.md)
   * [ItemStack](game_doc/ItemStack.md)
+  * [Npc](game_doc/Npc.md)
+  * [Reg](game_doc/Reg.md)
+  * [Slot](game_doc/Slot.md)

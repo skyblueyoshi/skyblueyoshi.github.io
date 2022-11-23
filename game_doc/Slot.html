@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Attack · GitBook</title>
+        <title>Slot · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="BiomeTerrain.html" />
     
-    
-    <link rel="prev" href="AdvancementUtils.html" />
+    <link rel="prev" href="Reg.html" />
     
 
     </head>
@@ -172,7 +170,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.5" data-path="Attack.html">
+        <li class="chapter " data-level="1.2.5" data-path="Attack.html">
             
                 <a href="Attack.html">
             
@@ -380,7 +378,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.21" data-path="Slot.html">
+        <li class="chapter active" data-level="1.2.21" data-path="Slot.html">
             
                 <a href="Slot.html">
             
@@ -428,7 +426,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Attack</a>
+        <a href=".." >Slot</a>
     </h1>
 </div>
 
@@ -443,8 +441,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="attack">Attack</h1>
-<p>&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x653B;&#x51FB;&#x5C5E;&#x6027;&#x3002;</p>
+                                <h1 id="slot">Slot</h1>
+<p>&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;&#x7269;&#x54C1;&#x683C;&#x5B50;&#xFF0C;&#x7269;&#x54C1;&#x683C;&#x5B50;&#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#x683C;&#x5B50;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;ItemStack&#x3002;</p>
 <h2 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h2>
 <table>
 <thead>
@@ -456,35 +454,61 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">attack</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">&#x4F24;&#x5BB3;&#x503C;&#x3002;</td>
+<td style="text-align:left">hasStack</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x683C;&#x5B50;&#x662F;&#x5426;&#x5305;&#x542B;&#x7269;&#x54C1;&#x5806;&#x6808;&#x3002;</td>
 </tr>
 <tr>
-<td style="text-align:left">knockBack</td>
+<td style="text-align:left">tag</td>
 <td style="text-align:left">int</td>
-<td style="text-align:left">&#x51FB;&#x9000;&#x503C;&#x3002;</td>
-</tr>
-<tr>
-<td style="text-align:left">crit</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">&#x653B;&#x51FB;&#x7684;&#x767E;&#x5206;&#x66B4;&#x51FB;&#x7387;&#x3002;1-100&#x8868;&#x793A;1-100%&#x7684;&#x6982;&#x7387;&#x4EA7;&#x751F;&#x53CC;&#x500D;&#x66B4;&#x51FB;&#x4F24;&#x5BB3;&#xFF0C;&#x5927;&#x4E8E;100&#x8868;&#x793A;&#x603B;&#x662F;&#x4EA7;&#x751F;&#x53CC;&#x500D;&#x66B4;&#x51FB;&#x4F24;&#x5BB3;&#xFF0C;&#x5C0F;&#x4E8E;1&#x8868;&#x793A;&#x4E0D;&#x4EA7;&#x751F;&#x66B4;&#x51FB;&#x4F24;&#x5BB3;&#x3002;</td>
+<td style="text-align:left">&#x683C;&#x5B50;&#x9644;&#x52A0;&#x503C;&#x3002;</td>
 </tr>
 </tbody>
 </table>
 <h2 id="&#x6210;&#x5458;&#x51FD;&#x6570;">&#x6210;&#x5458;&#x51FD;&#x6570;</h2>
-<h3 id="attackrestore">Attack:Restore</h3>
-<pre><code>void Restore()
-</code></pre><p> &#x91CD;&#x7F6E;&#x6240;&#x6709;&#x653B;&#x51FB;&#x5C5E;&#x6027;&#x6570;&#x503C;&#x3002;</p>
-<h2 id="&#x9759;&#x6001;&#x51FD;&#x6570;">&#x9759;&#x6001;&#x51FD;&#x6570;</h2>
-<h3 id="attacknew">Attack.new</h3>
-<pre><code>static Attack new(int attack, int knockBack, int crit)
-</code></pre><p> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x653B;&#x51FB;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x3002;</p>
-<p> <strong>&#x8FD4;&#x56DE;&#x503C;:</strong> &#x65B0;&#x7684;&#x653B;&#x51FB;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="slotvalid">Slot:Valid</h3>
+<pre><code>boolean Valid()
+</code></pre><p>&#x5224;&#x65AD;&#x683C;&#x5B50;&#x662F;&#x5426;&#x6709;&#x6548;&#x3002;</p>
+<h3 id="slotgetstack">Slot:GetStack</h3>
+<pre><code>ItemStack GetStack()
+</code></pre><h3 id="slotpushstack">Slot:PushStack</h3>
+<pre><code>void PushStack(ItemStack stack)
+</code></pre><h3 id="slotdecrstacksize">Slot:DecrStackSize</h3>
+<pre><code>ItemStack DecrStackSize(int value)
+</code></pre><h3 id="slotclearstack">Slot:ClearStack</h3>
+<pre><code>void ClearStack()
+</code></pre><h3 id="slotswapstack">Slot:SwapStack</h3>
+<pre><code>void SwapStack(Slot slot)
+</code></pre><h3 id="slotcanpush">Slot:CanPush</h3>
+<pre><code>boolean CanPush(ItemStack itemStack)
+</code></pre><h3 id="slotcanpick">Slot:CanPick</h3>
+<pre><code>boolean CanPick(ItemStack itemStack)
+</code></pre><h3 id="slotonpush">Slot:OnPush</h3>
+<pre><code>void OnPush(ItemStack itemStack)
+</code></pre><h3 id="slotonpick">Slot:OnPick</h3>
+<pre><code>void OnPick(ItemStack ItemStack)
+</code></pre><h3 id="slotaddcanpushlistener">Slot:AddCanPushListener</h3>
+<pre><code>ListenerID AddCanPushListener(table|function listener)
+</code></pre><h3 id="slotremovecanpushlistener">Slot:RemoveCanPushListener</h3>
+<pre><code>void RemoveCanPushListener(ListenerID listenerID)
+</code></pre><h3 id="slotaddcanpicklistener">Slot:AddCanPickListener</h3>
+<pre><code>ListenerID AddCanPickListener(table|function listener)
+</code></pre><h3 id="slotremovecanpicklistener">Slot:RemoveCanPickListener</h3>
+<pre><code>void RemoveCanPickListener(ListenerID listenerID)
+</code></pre><h3 id="slotaddonpushlistener">Slot:AddOnPushListener</h3>
+<pre><code>ListenerID AddOnPushListener(table|function listener)
+</code></pre><h3 id="slotremoveonpushlistener">Slot:RemoveOnPushListener</h3>
+<pre><code>void RemoveOnPushListener(ListenerID listenerID)
+</code></pre><h3 id="slotaddonpicklistener">Slot:AddOnPickListener</h3>
+<pre><code>ListenerID AddOnPickListener(table|function listener)
+</code></pre><h3 id="slotremoveonpicklistener">Slot:RemoveOnPickListener</h3>
+<pre><code>void RemoveOnPickListener(ListenerID listenerID)
+</code></pre><h3 id="slotsyncall">Slot:SyncAll</h3>
+<pre><code>void SyncAll()
+</code></pre><h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
 <ul>
-<li><code>attack</code>: &#x4F24;&#x5BB3;&#x503C;&#x3002;</li>
-<li><code>knockBack</code>: &#x51FB;&#x9000;&#x503C;&#x3002;</li>
-<li><code>crit</code>: &#x653B;&#x51FB;&#x7684;&#x767E;&#x5206;&#x66B4;&#x51FB;&#x7387;&#x3002;</li>
+<li><a href="ItemStack.html">ItemStack</a></li>
+<li><a href="ListenerID.md">ListenerID</a></li>
 </ul>
 
                                 
@@ -513,14 +537,10 @@
 
             
                 
-                <a href="AdvancementUtils.html" class="navigation navigation-prev " aria-label="Previous page: AdvancementUtils">
+                <a href="Reg.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Reg">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="BiomeTerrain.html" class="navigation navigation-next " aria-label="Next page: BiomeTerrain">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -529,7 +549,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Attack","level":"1.2.5","depth":2,"next":{"title":"BiomeTerrain","level":"1.2.6","depth":2,"path":"game_doc/BiomeTerrain.md","ref":"game_doc/BiomeTerrain.md","articles":[]},"previous":{"title":"AdvancementUtils","level":"1.2.4","depth":2,"path":"game_doc/AdvancementUtils.md","ref":"game_doc/AdvancementUtils.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"game_doc/Attack.md","mtime":"2022-11-23T16:49:44.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-23T16:54:42.268Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Slot","level":"1.2.21","depth":2,"previous":{"title":"Reg","level":"1.2.20","depth":2,"path":"game_doc/Reg.md","ref":"game_doc/Reg.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold"],"pluginsConfig":{"chapter-fold":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"game_doc/Slot.md","mtime":"2022-11-23T16:49:44.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-23T16:54:42.268Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

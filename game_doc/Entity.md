@@ -112,3 +112,10 @@ void RotateSpeed(double angle)
  在原有速度角度基础上继续旋转指定速度角度。
 * `angle`: 旋转的角度。
 
+## 参考
+
+* [Shape](Shape.md)
+* [Hitbox](Hitbox.md)
+* [Rectangle](Rectangle.md)
+* [SpriteEx](SpriteEx.md)
+* [Color](Color.md)

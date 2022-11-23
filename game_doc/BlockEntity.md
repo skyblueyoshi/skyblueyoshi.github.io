@@ -32,3 +32,7 @@ ModBlockEntity GetModBlockEntity()
 
 
 
+## 参考
+
+* [DataWatcher](DataWatcher.md)
+* [ModBlockEntity](ModBlockEntity.md)

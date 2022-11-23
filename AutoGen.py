@@ -18,6 +18,8 @@ class Lang(object):
     RETURN = "返回值"
     EXAMPLE = "范例"
     RO = "【只读】"
+    REF = "参考"
+    EXTERN = "父类"
 
 
 class BaseObject(object):
@@ -114,9 +116,32 @@ class BaseClass(object):
         self.members = []  # type:list[BaseObject]
         self.function_members = []  # type:list[BaseFunction]
         self.static_functions = []  # type:list[BaseFunction]
+        self.ref_data = []
+
+        if self.super_class_name:
+            self.try_add_type_ref(self.super_class_name)
 
     def add_member(self, member: BaseObject):
         self.members.append(member)
+        self.try_add_type_ref(member.type_name)
+
+    def add_func_ref(self, func: BaseFunction):
+        for param in func.param_objects:
+            self.try_add_type_ref(param.type_name)
+        if func.return_object:
+            self.try_add_type_ref(func.return_object.type_name)
+
+    def try_add_type_ref(self, type_name):
+        ts = type_name.split("|")
+        for t in ts:
+            if t.endswith("[]"):
+                t = t[0:len(t) - 2]
+            if t in ("int", "double", "number", "boolean", "nil", "table", "function", "string", "any"):
+                continue
+            if t == self.class_name:
+                continue
+            if t not in self.ref_data:
+                self.ref_data.append(t)
 
     def __str__(self):
         s = "class {}:{} // {}".format(self.class_name, self.super_class_name, self.desc)
@@ -130,10 +155,19 @@ class BaseClass(object):
             s += "\n" + str(f) + "\n"
         return s
 
+    @staticmethod
+    def get_type_link_format(type_name):
+        return "[{}]({}.md)".format(type_name, type_name)
+
     def gen_markdown(self):
         t = "# " + self.class_name + "\n"
+
         if self.desc:
             t += self.desc + "\n"
+        if self.super_class_name:
+            t += "## " + Lang.EXTERN + "\n"
+            t += "* " + BaseClass.get_type_link_format(self.super_class_name) + "\n"
+            t += "\n"
         if self.members:
             t += "## " + Lang.PROPERTIES + "\n"
 
@@ -161,6 +195,12 @@ class BaseClass(object):
                 t += "### " + self.class_name + "." + m.name + "\n\n"
                 t += "```\n" + m.gen_markdown_display_str() + "\n```\n\n"
                 t += m.gen_markdown_display_desc() + "\n\n"
+
+        if self.ref_data:
+            t += "## " + Lang.REF + "\n\n"
+
+            for m in self.ref_data:
+                t += "* " + BaseClass.get_type_link_format(m) + "\n"
 
         return t
 
@@ -194,7 +234,7 @@ class APISolver(object):
                     continue
                 if line.startswith("return "):
                     continue
-                if line.startswith("---API Document"):
+                if line.startswith("---@API"):
                     continue
                 res.append(line)
         return res
@@ -249,12 +289,14 @@ class APISolver(object):
                     func_obj.add_param(BaseObject(pn, pt, ""))
 
         ok = False
+        class_obj: BaseClass
         for class_obj in class_dict.values():
             if class_obj.lua_name == lua_cn:
                 if not func_obj.is_static:
                     class_obj.function_members.append(func_obj)
                 else:
                     class_obj.static_functions.append(func_obj)
+                class_obj.add_func_ref(func_obj)
                 ok = True
         if not ok:
             print("Failed:", line)
@@ -434,7 +476,7 @@ class APISolver(object):
             real_path = os.path.join(folder_name, fn)
             if os.path.isfile(real_path):
                 s = APISolver.read_file(real_path)
-                if s and s.startswith("---API Document"):
+                if s and s.startswith("---@API"):
                     sub_title_paths = APISolver.read_api(fn, s, out_folder)
                     title_paths.extend(sub_title_paths)
 
@@ -448,6 +490,7 @@ class APISolver(object):
         print(s)
 
         APISolver.save_md("SUMMARY.md", s)
+
 
 if __name__ == '__main__':
     APISolver.read_apis(API_PATH, "游戏API文档", "game_doc")

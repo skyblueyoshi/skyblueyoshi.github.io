@@ -42,3 +42,6 @@ boolean HasAnimation()
 
  **返回值:** 是否拥有动画效果。
 
+## 参考
+
+* [TextureLocation](TextureLocation.md)

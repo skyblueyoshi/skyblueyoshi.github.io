@@ -11,12 +11,10 @@
 ### ItemStack:Valid
 
 ```
-boolean Valid()
+void Valid()
 ```
 
 判断当前堆叠物品数据是否有效。
-
- **返回值:** 数据是否有效。
 
 ### ItemStack:AddEnchantment
 
@@ -36,7 +34,10 @@ boolean AddEnchantment(int enchantmentId, int enchantmentLevel)
 ItemStack Clone(int stackSize)
 ```
 
+克隆返回一个新的堆叠物品对象。
 
+ **返回值:** 新的堆叠物品对象。
+* `stackSize`: 新的堆栈数量。
 
 ### ItemStack:Clone
 
@@ -44,45 +45,43 @@ ItemStack Clone(int stackSize)
 ItemStack Clone()
 ```
 
+克隆返回一个新的堆叠物品对象。
 
+ **返回值:** 新的堆叠物品对象。
 
 ### ItemStack:SetStackSize
 
 ```
-void SetStackSize(int value)
+void SetStackSize(any value)
 ```
 
 设置堆栈数量。
-* `value`: 新的堆栈数量。
 
 ### ItemStack:AddDurable
 
 ```
-void AddDurable(double value)
+void AddDurable(any value)
 ```
 
 增加耐久值。
-* `value`: 新增的耐久值。
 
 ### ItemStack:SetDurable
 
 ```
-void SetDurable(double value)
+void SetDurable(any value)
 ```
 
 直接设置耐久值。
-* `value`: 耐久值。
 
 ### ItemStack:LoseDurable
 
 ```
-boolean LoseDurable(double value)
+boolean LoseDurable(any value)
 ```
 
 减少耐久值。
 
  **返回值:** 减少后耐久是否为0。
-* `value`: 减少的耐久值。
 
 ### ItemStack:GetEnchantmentLevel
 
@@ -101,7 +100,8 @@ int GetEnchantmentLevel(int enchantmentId)
 boolean HasEnchantment(int enchantmentId)
 ```
 
-
+判断当前堆叠物品是否拥有了指定附魔。
+* `enchantmentId`: 附魔ID。
 
 ### ItemStack:HasEnchantment
 
@@ -109,7 +109,7 @@ boolean HasEnchantment(int enchantmentId)
 boolean HasEnchantment()
 ```
 
-
+判断当前堆叠物品是否拥有了指定附魔。
 
 ### ItemStack:GetEnchantmentByIndex
 
@@ -117,7 +117,10 @@ boolean HasEnchantment()
 Enchantment GetEnchantmentByIndex(int index)
 ```
 
+由附魔索引得到附魔对象。
 
+ **返回值:** 附魔对象。
+* `index`: 附魔索引。
 
 ### ItemStack:RemoveEnchantmentByIndex
 
@@ -125,7 +128,8 @@ Enchantment GetEnchantmentByIndex(int index)
 void RemoveEnchantmentByIndex(int index)
 ```
 
-
+由附魔索引删除附魔对象。
+* `index`: 附魔索引。
 
 ### ItemStack:RemoveEnchantment
 
@@ -133,7 +137,8 @@ void RemoveEnchantmentByIndex(int index)
 void RemoveEnchantment(int enchantmentID)
 ```
 
-
+由附魔ID删除一个附魔对象。
+* `enchantmentID`: 附魔ID。
 
 ### ItemStack:ClearEnchantments
 
@@ -141,7 +146,7 @@ void RemoveEnchantment(int enchantmentID)
 void ClearEnchantments()
 ```
 
-
+清空所有附魔。
 
 ### ItemStack:IsItemEqual
 
@@ -149,7 +154,8 @@ void ClearEnchantments()
 boolean IsItemEqual(ItemStack itemStack)
 ```
 
-
+判断当前堆叠物品的物品数据是否与另一个堆叠物品的物品数据相同。
+* `itemStack`: 另一个堆叠物品。
 
 ### ItemStack:IsItemStackEqual
 
@@ -157,7 +163,9 @@ boolean IsItemEqual(ItemStack itemStack)
 boolean IsItemStackEqual(ItemStack itemStack, boolean ignoreStackSize)
 ```
 
-
+判断当前堆叠物品是否与另一个堆叠物品相同。
+* `itemStack`: 另一个堆叠物品。
+* `ignoreStackSize`: 是否忽略堆叠物品数量判断。
 
 ### ItemStack:IsItemStackEqual
 
@@ -165,7 +173,8 @@ boolean IsItemStackEqual(ItemStack itemStack, boolean ignoreStackSize)
 boolean IsItemStackEqual(ItemStack itemStack)
 ```
 
-
+判断当前堆叠物品是否与另一个堆叠物品相同。
+* `itemStack`: 另一个堆叠物品。
 
 ### ItemStack:GetMergeCount
 
@@ -173,7 +182,8 @@ boolean IsItemStackEqual(ItemStack itemStack)
 int GetMergeCount(ItemStack itemStack)
 ```
 
-
+返回当前堆叠物品与另一个堆叠物品可合并的数量。
+* `itemStack`: 另一个堆叠物品。
 
 ### ItemStack:SplitStack
 
@@ -181,7 +191,10 @@ int GetMergeCount(ItemStack itemStack)
 ItemStack SplitStack(int count)
 ```
 
+拆分当前堆叠物品，返回新的拆出来的堆叠物品对象。
 
+ **返回值:** 新的拆出来的堆叠物品对象。
+* `count`: 拆出来的堆叠数量。
 
 ### ItemStack:GetItem
 
@@ -189,7 +202,7 @@ ItemStack SplitStack(int count)
 Item GetItem()
 ```
 
-
+获得当前堆叠物品的物品数据。
 
 ### ItemStack:Render
 
@@ -197,7 +210,7 @@ Item GetItem()
 void Render(Vector2 position, Color color, SpriteExData spriteExData)
 ```
 
-
+绘制当前堆叠物品。
 
 ### ItemStack:RenderNum
 
@@ -205,7 +218,7 @@ void Render(Vector2 position, Color color, SpriteExData spriteExData)
 void RenderNum(Vector2 position, Color color, SpriteExData spriteExData)
 ```
 
-
+绘制当前堆叠物品的堆叠数量。
 
 ### ItemStack:RenderCustomNum
 
@@ -213,7 +226,7 @@ void RenderNum(Vector2 position, Color color, SpriteExData spriteExData)
 void RenderCustomNum(int num, Vector2 position, Color color, SpriteExData spriteExData)
 ```
 
-
+自定义绘制当前堆叠物品的堆叠数量。
 
 ### ItemStack:RunOnHeldEvent
 
@@ -221,7 +234,8 @@ void RenderCustomNum(int num, Vector2 position, Color color, SpriteExData sprite
 void RunOnHeldEvent(Player player)
 ```
 
-RunHeldEvent
+执行堆叠物品挂接ModItem的`OnHeld`函数。
+* `player`: 玩家
 
 ### ItemStack:RunOnHeldRenderEvent
 
@@ -229,7 +243,8 @@ RunHeldEvent
 void RunOnHeldRenderEvent(Player player)
 ```
 
-
+执行堆叠物品挂接ModItem的`OnHeldRender`函数。
+* `player`: 玩家
 
 ### ItemStack:RunOnHeldByNpcEvent
 
@@ -237,7 +252,7 @@ void RunOnHeldRenderEvent(Player player)
 void RunOnHeldByNpcEvent(Npc npc)
 ```
 
-
+执行堆叠物品挂接ModItem的`OnHeld`函数。
 
 ### ItemStack:CanUse
 
@@ -245,7 +260,8 @@ void RunOnHeldByNpcEvent(Npc npc)
 boolean CanUse(Player player)
 ```
 
-RunCanUse
+返回当前堆叠物品是否能被玩家使用。
+* `player`: 玩家
 
 ### ItemStack:RunOnUsedEvent
 
@@ -253,7 +269,8 @@ RunCanUse
 void RunOnUsedEvent(Player player)
 ```
 
-RunUseEvent
+执行堆叠物品挂接ModItem的`OnUsed`函数。
+* `player`: 玩家
 
 ### ItemStack:RunOnUsedByNpcEvent
 
@@ -261,7 +278,7 @@ RunUseEvent
 void RunOnUsedByNpcEvent(Npc npc)
 ```
 
-
+执行堆叠物品挂接ModItem的`OnUsedByNpc`函数。
 
 ### ItemStack:RunOnDurableEmptyEvent
 
@@ -269,7 +286,8 @@ void RunOnUsedByNpcEvent(Npc npc)
 boolean RunOnDurableEmptyEvent(Player player)
 ```
 
-
+执行堆叠物品挂接ModItem的`OnDurableEmpty`函数。
+* `player`: 玩家
 
 ### ItemStack:Serialization
 
@@ -287,7 +305,9 @@ table Serialization()
 ModItem GetModItem()
 ```
 
+返回当前堆叠物品挂接的ModItem对象。
 
+ **返回值:** 挂接的ModItem对象，如果无挂接，返回nil。
 
 ## 静态函数
 
@@ -345,3 +365,13 @@ static ItemStack Deserialization(table serializedTable)
  **返回值:** 新的堆叠物品对象。
 * `serializedTable`: lua表。
 
+## 参考
+
+* [Item](Item.md)
+* [Enchantment](Enchantment.md)
+* [Vector2](Vector2.md)
+* [Color](Color.md)
+* [SpriteExData](SpriteExData.md)
+* [Player](Player.md)
+* [Npc](Npc.md)
+* [ModItem](ModItem.md)

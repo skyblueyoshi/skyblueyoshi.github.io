@@ -9,3 +9,8 @@
 | treeInfo | BiomeTreeInfo | 树信息。 |
 | mushroomInfo | BiomeMushroomInfo | 巨型蘑菇信息。 |
 | oreGroupName | string | 当前群系指定矿物名称批量生成矿物。 |
+## 参考
+
+* [BiomeTerrains](BiomeTerrains.md)
+* [BiomeTreeInfo](BiomeTreeInfo.md)
+* [BiomeMushroomInfo](BiomeMushroomInfo.md)

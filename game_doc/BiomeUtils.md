@@ -36,3 +36,6 @@ static BiomeData GetData(int biomeID)
  **返回值:** 生物群系数据。
 * `biomeID`: 生物群系ID。
 
+## 参考
+
+* [BiomeData](BiomeData.md)

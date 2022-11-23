@@ -221,3 +221,6 @@ Inventory GetInventory(int channel)
 
 
 
+## 参考
+
+* [Inventory](Inventory.md)

@@ -32,3 +32,6 @@ static void Remove(string accountName)
 将一个账号从存档中移除。
 * `accountName`: 账号名称。
 
+## 参考
+
+* [Account](Account.md)
