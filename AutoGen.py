@@ -491,10 +491,8 @@ class APISolver(object):
     def save_main_summary():
         s = "# Table of contents\n\n"
         s += APISolver.read_file("engine_doc/SUMMARY.md")
-        print(s)
         s += APISolver.read_file("game_doc/SUMMARY.md")
-        print(s)
-
+        s += APISolver.read_file("tutorial/SUMMARY.md")
         APISolver.save_md("SUMMARY.md", s)
 
     @staticmethod
