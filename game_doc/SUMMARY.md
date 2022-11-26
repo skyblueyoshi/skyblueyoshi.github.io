@@ -1,4 +1,4 @@
-* [游戏API文档](game_doc/README.md)
+* [《泰拉世界》游戏API文档](game_doc/README.md)
   * [Account](game_doc/Account.md)
   * [AccountUtils](game_doc/AccountUtils.md)
   * [Advancement](game_doc/Advancement.md)

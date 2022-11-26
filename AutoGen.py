@@ -1,8 +1,12 @@
 import os
 import io
+import shutil
+
+RAW_GAME_ENGINE_API_PATH = "G:/TechCat/TechCat/TechCatGame/assets_sources/Scripts/engine_api"
 
 API_PATH = "C:/Users/FGA/Documents/TerraCraft/devmods/TerraCraft/apis"
 ENGINE_API_PATH = os.path.join(API_PATH, "engine_api")
+EDITOR_ENGINE_API_PATH = "G:/TechCat/TechCat/TechCatEditor/devmods/Editor/engine_api"
 
 gameAPIs = []
 engineAPIs = []
@@ -486,12 +490,25 @@ class APISolver(object):
     @staticmethod
     def save_main_summary():
         s = "# Table of contents\n\n"
+        s += APISolver.read_file("engine_doc/SUMMARY.md")
+        print(s)
         s += APISolver.read_file("game_doc/SUMMARY.md")
         print(s)
 
         APISolver.save_md("SUMMARY.md", s)
 
+    @staticmethod
+    def copy_folder(src, dst):
+        src_files = os.listdir(src)
+        for file_name in src_files:
+            full_file_name = os.path.join(src, file_name)
+            if os.path.isfile(full_file_name):
+                shutil.copy(full_file_name, dst)
+
 
 if __name__ == '__main__':
-    APISolver.read_apis(API_PATH, "游戏API文档", "game_doc")
+    APISolver.copy_folder(RAW_GAME_ENGINE_API_PATH, ENGINE_API_PATH)
+    APISolver.copy_folder(RAW_GAME_ENGINE_API_PATH, EDITOR_ENGINE_API_PATH)
+    APISolver.read_apis(ENGINE_API_PATH, "游戏引擎API文档", "engine_doc")
+    APISolver.read_apis(API_PATH, "《泰拉世界》游戏API文档", "game_doc")
     APISolver.save_main_summary()
