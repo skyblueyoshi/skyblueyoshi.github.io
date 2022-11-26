@@ -18,5 +18,6 @@
   * [Inventory](game_doc/Inventory.md)
   * [ItemStack](game_doc/ItemStack.md)
   * [Npc](game_doc/Npc.md)
+  * [RecipeUtils](game_doc/RecipeUtils.md)
   * [Reg](game_doc/Reg.md)
   * [Slot](game_doc/Slot.md)
